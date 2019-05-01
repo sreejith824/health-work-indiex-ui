@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { HealthworkindexComponent } from './healthworkindex/healthworkindex.component';
 import { LoginComponent } from './login/login.component';
+import { TeamDashboardComponent } from './team-dashboard/team-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDashboardComponent,
     HealthworkindexComponent,
-    LoginComponent
+    LoginComponent,
+    TeamDashboardComponent
   ],
   imports: [
     BrowserModule,

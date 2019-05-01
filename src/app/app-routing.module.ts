@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { HealthworkindexComponent } from './healthworkindex/healthworkindex.component';
 import { LoginComponent } from './login/login.component';
+import {TeamDashboardComponent} from './team-dashboard/team-dashboard.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "app-login",
     component: LoginComponent
+  },
+    {
+    path: "app-team-dashboard",
+    component: TeamDashboardComponent
   },
 ];
 

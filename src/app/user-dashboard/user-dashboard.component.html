@@ -1,14 +1,14 @@
 <div *ngIf="!hasData">{{ errorMessage }}</div>
 
 <div *ngIf="hasData">
-  <google-chart
-    [type]="chartType"
-    [columnNames]="chartColumns"
-    [data]="chartData"
-    [options]="chartOption"
-  ></google-chart>
+    <google-chart [type]="chartType" [columnNames]="chartColumns" [data]="chartData" [options]="chartOption">
+    </google-chart>
 </div>
 
-<div class="mat-app-background example-button-row button-left-padding ">
-  <button mat-fab (click)="addWorkHealthIndex()">+</button>
+
+<div class="example-button-row button-left-padding">
+    <button mat-raised-button color="primary" (click)="addWorkHealthIndex()"> + ADD YOUR DAY</button>
+</div>
+<div class="example-button-row button-left-padding">
+    <a mat-raised-button routerLink="/app-team-dashboard">GO TO TEAM >> </a>
 </div>
