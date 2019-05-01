@@ -1,0 +1,36 @@
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" 
+  (dateInput)="getDate('input', $event)"> 
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div mat-dialog-content>
+  <p>How do you feel today?</p>
+  <mat-slider
+    step="1"
+    tickInterval="1"
+    thumbLabel
+    (input)="getHealthIndexEvent($event)"
+    min="1"
+    max="10"
+  ></mat-slider>
+</div>
+
+<div mat-dialog-content>
+  <p>How much occupied you are?</p>
+  <mat-slider
+    step="1"
+    tickInterval="1"
+    thumbLabel
+    (input)="getWorkIndexEvent($event)"
+    min="1"
+    max="10"
+  ></mat-slider>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-button (click)="saveHealthWorkIndex()">Save</button>
+</div>
+

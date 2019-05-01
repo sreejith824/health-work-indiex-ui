@@ -1,0 +1,11 @@
+.example-button-row button,
+.example-button-row a {
+  margin-right: 5%;
+}
+.button-left-padding {
+  padding-left: 70%;
+}
+
+.header-top-padding {
+  padding-left: 10%;
+}

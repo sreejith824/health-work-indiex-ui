@@ -1,0 +1,6 @@
+<div class="example-form left-padding top-padding">
+  <mat-form-field class="example-full-width">
+    <input type="text" matInput placeholder="Please login" pattern="[A-Za-z]{3,8}" [(ngModel)]="user" >
+  </mat-form-field>
+  <button mat-button (click)="login(user)">Log In!</button>
+</div>
