@@ -77,13 +77,13 @@ export class UserDashboardComponent implements OnInit {
             width: 1200,
             height: 600,
             vAxis: {
-                minValue: 0, maxValue: 10, title: 'Feel Good (X - Axis)',
+                minValue: 0, maxValue: 10, title: 'Feel Good (Y - Axis)',
                 titleTextStyle: {
                     color: 'blue'
                 }
             },
             hAxis: {
-                minValue: 0, maxValue: 10, title: 'Work Occupied (Y - Axis)',
+                minValue: 0, maxValue: 10, title: 'Work Occupied (X - Axis)',
                 titleTextStyle: {
                     color: 'red'
                 }
