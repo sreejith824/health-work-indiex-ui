@@ -39,13 +39,13 @@ export class TeamDashboardComponent implements OnInit {
             sizeAxis: { minValue: 5, maxSize: 5 },
             legend: { position: 'right' },
             hAxis: {
-                minValue: 0, maxValue: 10, title: 'How the team feel today (Y - Axis)',
+                minValue: 0, maxValue: 10, title: 'How the team feel today (X - Axis)',
                 titleTextStyle: {
                     color: '#FF0000'
                 }
             },
             vAxis: {
-                minValue: 0, maxValue: 10, title: 'How much occupied the team is (X - Axis)',
+                minValue: 0, maxValue: 10, title: 'How much occupied the team is (Y - Axis)',
                 titleTextStyle: {
                     color: '#000000'
                 }
