@@ -73,7 +73,7 @@ export class TeamDashboardComponent implements OnInit {
                     this.hasData = true;
                 } else {
                     this.errorMessage =
-                        "Team have not entered their day for " + this.selectedDate;
+                        "Team have not entered their day for " + new Date(this.selectedDate).toDateString();
                     this.hasData = false;
                 }
             });

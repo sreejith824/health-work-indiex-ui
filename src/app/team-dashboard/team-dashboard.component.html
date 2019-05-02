@@ -1,5 +1,5 @@
-
-<div>
+<div *ngIf="!hasData">{{ errorMessage }}</div>
+<div *ngIf="hasData">
     <google-chart [type]="chartType" [data]="chartData" [options]="chartOption">
     </google-chart>
 </div>
