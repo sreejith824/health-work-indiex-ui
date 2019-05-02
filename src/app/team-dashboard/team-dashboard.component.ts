@@ -38,16 +38,16 @@ export class TeamDashboardComponent implements OnInit {
             colorAxis: { colors: ['yellow', 'red'] },
             sizeAxis: { minValue: 5, maxSize: 5 },
             legend: { position: 'right' },
-            hAxis: {
-                minValue: 0, maxValue: 10, title: 'How the team feel today (X - Axis)',
+            vAxis: {
+                minValue: 0, maxValue: 10, title: 'Feel Good (Y - Axis)',
                 titleTextStyle: {
-                    color: '#FF0000'
+                    color: 'blue'
                 }
             },
-            vAxis: {
-                minValue: 0, maxValue: 10, title: 'How much occupied the team is (Y - Axis)',
+            hAxis: {
+                minValue: 0, maxValue: 10, title: 'Work Occupied (X - Axis)',
                 titleTextStyle: {
-                    color: '#000000'
+                    color: 'red'
                 }
             },
             series: { visibleInLegend: false },
@@ -63,8 +63,8 @@ export class TeamDashboardComponent implements OnInit {
                     healthWorkDomainArray.forEach(healthWorkDomain => {
                         const chartDataElement = [
                             '',
-                            healthWorkDomain.healthindex,
                             healthWorkDomain.workindex,
+                            healthWorkDomain.healthindex,
                             healthWorkDomain.user
                         ];
                         chartData.push(chartDataElement);
