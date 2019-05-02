@@ -12,6 +12,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { HealthworkindexComponent } from './healthworkindex/healthworkindex.component';
 import { LoginComponent } from './login/login.component';
 import { TeamDashboardComponent } from './team-dashboard/team-dashboard.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { TeamDashboardComponent } from './team-dashboard/team-dashboard.componen
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
