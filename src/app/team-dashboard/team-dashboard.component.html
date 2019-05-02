@@ -1,4 +1,4 @@
-<div *ngIf="!hasData">{{ errorMessage }}</div>
+<div class="date-padding" *ngIf="!hasData">{{ errorMessage }}</div>
 <div *ngIf="hasData">
     <google-chart [type]="chartType" [data]="chartData" [options]="chartOption">
     </google-chart>
