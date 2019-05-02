@@ -8,61 +8,62 @@ import { HealthWorkDomain } from "../health-work-domain";
 import { ApiService } from "../api.service";
 
 export interface DialogData {
-  user: string;
+    user: string;
 }
 
 
 
 @Component({
-  selector: "app-healthworkindex",
-  templateUrl: "./healthworkindex.component.html",
-  styleUrls: ["./healthworkindex.component.css"]
+    selector: "app-healthworkindex",
+    templateUrl: "./healthworkindex.component.html",
+    styleUrls: ["./healthworkindex.component.css"]
 })
 export class HealthworkindexComponent implements OnInit {
-  healthWorkIndex: HealthWork;
+    healthWorkIndex: HealthWork;
 
-  constructor(
-    public dialogRef: MatDialogRef<HealthworkindexComponent>,
-    private apiService: ApiService,
-    private router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {}
+    constructor(
+        public dialogRef: MatDialogRef<HealthworkindexComponent>,
+        private apiService: ApiService,
+        private router: Router,
+        @Inject(MAT_DIALOG_DATA) public data: DialogData
+    ) {
+    }
 
-  ngOnInit() {
-    this.healthWorkIndex = new HealthWork();
-  }
+    ngOnInit() {
+        this.healthWorkIndex = new HealthWork();
+    }
 
-  getDate(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.healthWorkIndex.date = event.value;
-  }
+    getDate(type: string, event: MatDatepickerInputEvent<Date>) {
+        this.healthWorkIndex.date = event.value;
+    }
 
-  saveHealthWorkIndex() {
-    console.log("date : " + this.healthWorkIndex.date);
-    console.log("healthIndex : " + this.healthWorkIndex.healthIndex);
-    console.log("workIndex : " + this.healthWorkIndex.workIndex);
-    var healthWorkDomain = new HealthWorkDomain(
-      this.healthWorkIndex.date,
-      this.healthWorkIndex.healthIndex,
-      this.healthWorkIndex.workIndex, this.data.user
-    );
+    saveHealthWorkIndex() {
+        console.log("date : " + this.healthWorkIndex.date);
+        console.log("healthIndex : " + this.healthWorkIndex.healthIndex);
+        console.log("workIndex : " + this.healthWorkIndex.workIndex);
+        var healthWorkDomain = new HealthWorkDomain(
+            this.healthWorkIndex.date,
+            this.healthWorkIndex.healthIndex,
+            this.healthWorkIndex.workIndex, this.data.user
+        );
 
-    this.apiService.save(healthWorkDomain).subscribe(() => {
-      console.log("Saved !!!!");
-      //this.router.navigate(["app-user-dashboard"]);
-      this.dialogRef.close();
-      this.router.navigate(["app-user-dashboard/" + this.data.user]);
-    });
-  }
+        this.apiService.save(healthWorkDomain).subscribe(() => {
+            console.log("Saved !!!!");
+            //this.router.navigate(["app-user-dashboard"]);
+            this.dialogRef.close();
+            this.router.navigate(["app-user-dashboard/" + this.data.user]);
+        });
+    }
 
-  closeDialog() {
-    this.dialogRef.close();
-  }
+    closeDialog() {
+        this.dialogRef.close();
+    }
 
-  getWorkIndexEvent(event: any) {
-    this.healthWorkIndex.workIndex = event.value;
-  }
+    getWorkIndexEvent(event: any) {
+        this.healthWorkIndex.workIndex = event.value;
+    }
 
-  getHealthIndexEvent(event: any) {
-    this.healthWorkIndex.healthIndex = event.value;
-  }
+    getHealthIndexEvent(event: any) {
+        this.healthWorkIndex.healthIndex = event.value;
+    }
 }

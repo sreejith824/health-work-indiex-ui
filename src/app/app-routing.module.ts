@@ -25,7 +25,7 @@ const routes: Routes = [
     component: LoginComponent
   },
     {
-    path: "app-team-dashboard",
+    path: "app-team-dashboard/:user",
     component: TeamDashboardComponent
   },
 ];
