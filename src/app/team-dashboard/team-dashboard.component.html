@@ -4,15 +4,15 @@
     </google-chart>
 </div>
 
-<div class="date-padding">
-    <br>Select date for other days
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="getDate('input', $event)"
-            (dateChange)="addEvent('change', $event)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-</div>
+
+<mat-form-field class="date-padding"> 
+    <input matInput [matDatepicker]="picker" placeholder="Get teams view for " (dateInput)="getDate('input', $event)"
+        (dateChange)="addEvent('change', $event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
 
 <div class="example-button-row button-left-padding">
     <a mat-raised-button routerLink="/app-user-dashboard/{{user}}"><< BACK TO USER DASHBOARD</a>
